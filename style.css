@@ -1,0 +1,283 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000000;
+}
+
+/* ========================================NAVIGATION BAR CSS =========================================== */
+header {
+  border-bottom: #ffffff 1px solid;
+}
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 6vh;
+  background-color: #000000;
+  font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
+}
+
+/* =============== MENU LINKS =====================*/
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+  width: 35%;
+}
+.nav-links li {
+  list-style: none;
+}
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  letter-spacing: 0px;
+}
+
+/* ========CSS TO CHANGE COLOUR OF LINKS========*/
+
+header .highlight,
+header .current a {
+  color: yellow;
+}
+
+header a:hover {
+  color: red;
+}
+
+/* =================== BURGER MENU STUFF =========================== */
+
+.burger {
+  display: none;
+  cursor: pointer;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px;
+}
+
+/* ====================== ANIMATION ===============================*/
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+/* ====================================== MEDIA SCREEN ADJUSTMENT CSS============================================================= */
+
+@media screen and (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .nav-links {
+    position: absolute;
+    right: 0px;
+    height: 96vh;
+    top: 4vh;
+    background-color: #000000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in;
+    -moz-transition: transform 0.3s ease-in;
+    -webkit-transition: transform 0.3s ease-in;
+    -o-transition: transform 0.3s ease-in;
+  }
+  .nav-links li {
+    opacity: 0;
+  }
+  .burger {
+    display: block;
+  }
+  .burger div {
+    width: 22px;
+    height: 2px;
+    background-color: white;
+    margin: 4px;
+    transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+  }
+  .toggle .line1 {
+    transform: rotate(45deg) translate(3px, 6px);
+  }
+  .toggle .line2 {
+    opacity: 0;
+  }
+  .toggle .line3 {
+    transform: rotate(-45deg) translate(3px, -6px);
+  }
+
+  .webprojectboxrow {
+    flex-wrap: wrap;
+  }
+}
+
+.nav-active {
+  transform: translateX(0%);
+  transition: transform 0.3s ease-in;
+  visibility: visible;
+}
+
+/* ====================================================== INDEX PAGE CONTENT =========================================*/
+
+/* ==================== HERO IMAGE SECTION CSS===================== */
+
+.hero {
+  /* Sizing */
+  width: 100%;
+  height: 35vh;
+
+  /* Flexbox stuff */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Text styles */
+  text-align: center;
+  color: white;
+
+  /* Background styles */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./img/code2.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  border-bottom: #ffffff 1px solid;
+}
+
+.hero h1 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 40px;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+}
+
+.hero h2 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+}
+
+.hero .btn {
+  display: block;
+  width: 125px;
+  padding: 10px;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #ffffff;
+  font-family: 'Roboto Condensed', sans-serif;
+  background-color: #000000;
+  text-decoration: none;
+  font-size: 14px;
+  border: 1px solid white;
+  border-radius: 3px;
+}
+
+.social {
+  padding: 20px;
+}
+
+.social img {
+  width: 40px;
+  padding: 2px;
+}
+
+/* ========================= PROJECTS =============================*/
+
+.projects {
+  color: #ffffff;
+  background-color: #060c21;
+  font-family: 'poppins', sans-serif;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+}
+
+.projects h1 {
+  padding: 20px;
+  text-transform: uppercase;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+  width: 350px;
+  margin: 0px 20px 0px 20px;
+}
+.box img {
+  width: 300px;
+  height: 285px;
+  padding: 15px;
+}
+
+.box .content h3 {
+  font-size: 16px;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 500;
+}
+
+.projectbtn {
+  position: relative;
+  background: black;
+  color: #ffffff;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid #ffffff;
+  padding: 10px 30px;
+}
+
+.projectbtn a {
+  z-index: 2;
+}
+.projectbtn:hover {
+  transition: 0.5s ease-in-out;
+  background: #ffffff;
+  color: #000000;
+}
+
+.box:before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: #ffffff;
+  z-index: -1;
+}
+
+.content {
+  position: relative;
+  padding: 20px;
+}
